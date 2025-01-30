@@ -1,6 +1,5 @@
 import java.time.Year;
 import java.util.Objects;
-//might also want to create to json/XML
 public class Person {
 
     private String ID ="";
@@ -14,7 +13,6 @@ public class Person {
         this.firstName = firstName;
         this.lastName = lastName;
         this.title = title;
-
         this.YOB = YOB;
     }
 
