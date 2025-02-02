@@ -1,9 +1,28 @@
 import java.util.Objects;
 public class SalaryWorker extends Worker {
     private Double annualSalary;
-    public SalaryWorker(String ID, String firstName, String lastName, String title, int YOB, double hourlyPayRate) {
+
+    public Double getAnnualSalary() {
+        return annualSalary;
+    }
+
+    public void setAnnualSalary(Double annualSalary) {
+        this.annualSalary = annualSalary;
+    }
+
+    public SalaryWorker(String ID, String firstName, String lastName, String title, int YOB, double hourlyPayRate, double annualSalary) {
         super(ID, firstName, lastName, title, YOB, hourlyPayRate);
         this.annualSalary = annualSalary;
+    }
+
+    @Override
+    public double calculateWeeklyPay(double hoursWorked){
+        return annualSalary / 52;
+    }
+
+    @Override
+    public void displayWeeklyPay(double hoursWorked){
+        System.out.println("This week's pay is " + calculateWeeklyPay(hoursWorked) + "or 1/52 of the annual salary of " + annualSalary);
     }
 
 
@@ -58,16 +77,15 @@ public class SalaryWorker extends Worker {
                 ", annualSalary=" + annualSalary +
                 '}';
     }
-//Change the following 2 overrides to work with annualSalary
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
-        Worker worker = (Worker) o;
-        return super.getID() == worker.getID() && Objects.equals(super.getID(), worker.getID()) && Objects.equals(super.getFirstName(), worker.getFirstName()) && Objects.equals(super.getLastName(), worker.getLastName()) && Objects.equals(super.getTitle(), worker.getTitle()) && Objects.equals(super.getHourlyPayRate(), worker.getHourlyPayRate());
+        SalaryWorker salaryWorker = (SalaryWorker) o;
+        return super.getID() == salaryWorker.getID() && Objects.equals(super.getID(), salaryWorker.getID()) && Objects.equals(super.getFirstName(), salaryWorker.getFirstName()) && Objects.equals(super.getLastName(), salaryWorker.getLastName()) && Objects.equals(super.getTitle(), salaryWorker.getTitle()) && Objects.equals(super.getHourlyPayRate(), salaryWorker.getHourlyPayRate()) && Objects.equals(annualSalary, salaryWorker.annualSalary);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.getID(), super.getFirstName(), super.getLastName(), super.getTitle(), super.getYOB(), super.getHourlyPayRate());
+        return Objects.hash(super.getID(), super.getFirstName(), super.getLastName(), super.getTitle(), super.getYOB(), super.getHourlyPayRate(), annualSalary);
     }
 }
