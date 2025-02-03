@@ -1,12 +1,12 @@
 import java.util.Objects;
 public class SalaryWorker extends Worker {
-    private Double annualSalary;
+    private double annualSalary;
 
-    public Double getAnnualSalary() {
+    public double getAnnualSalary() {
         return annualSalary;
     }
 
-    public void setAnnualSalary(Double annualSalary) {
+    public void setAnnualSalary(double annualSalary) {
         this.annualSalary = annualSalary;
     }
 
