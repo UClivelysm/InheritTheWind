@@ -95,4 +95,18 @@ class PersonTest {
         assertEquals(20, person1.getAge(1990));
 
     }
+    //        person1 = new Person("000001", "TestFirst1", "TestLast1", "Mr.", 1970);
+    //
+    @Test
+    void testToCSV(){
+        assertEquals(person1.toCSV(), "000001, TestFirst1, TestLast1, Mr., 1970");
+    }
+    @Test
+    void testToJSON(){
+        assertEquals(person1.toJSON(), "{\"ID\":\"000001\", \"firstName\":\"TestFirst1\", \"lastName\":\"TestLast1\", \"title\":\"Mr.\", \"YOB\":1970}");
+    }
+    @Test
+    void testToXML(){
+        assertEquals(person1.toXML(), "<Person><ID>000001</ID><firstName>TestFirst1</firstName><lastName>TestLast1</lastName><title>Mr.</title><YOB>1970</YOB></Person>");
+    }
 }

@@ -43,8 +43,8 @@ public class SalaryWorker extends Worker {
         retString += " " +DQ+ "firstName" +DQ+ ":" +DQ+ super.getFirstName() +DQ+ ",";
         retString += " " +DQ+ "lastName" +DQ+ ":" +DQ+ super.getLastName() +DQ+ ",";
         retString += " " +DQ+ "title" +DQ+ ":" +DQ+ super.getTitle() +DQ+ ",";
-        retString += " " +DQ+ "YOB" +DQ+ ":" + super.getYOB() +DQ+ ",";
-        retString += " " +DQ+ "hourlyPayRate" +DQ+ ":" + super.getHourlyPayRate() +DQ+ ",";
+        retString += " " +DQ+ "YOB" +DQ+ ":" + super.getYOB() + ",";
+        retString += " " +DQ+ "hourlyPayRate" +DQ+ ":" + super.getHourlyPayRate() + ",";
         retString += " " +DQ+ "annualSalary" +DQ+  ":" + annualSalary + "}";
         return retString;
     }
@@ -72,8 +72,8 @@ public class SalaryWorker extends Worker {
                 ", firstName='" + super.getFirstName() + '\'' +
                 ", lastName='" + super.getLastName() + '\'' +
                 ", title='" + super.getTitle() + '\'' +
-                ", YOB=" + super.getYOB() + "\'" +
-                ", hourlyPayRate=" + super.getHourlyPayRate() + "\'" +
+                ", YOB=" + super.getYOB()  +
+                ", hourlyPayRate=" + super.getHourlyPayRate() +
                 ", annualSalary=" + annualSalary +
                 '}';
     }

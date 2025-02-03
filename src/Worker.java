@@ -34,8 +34,6 @@ public class Worker extends Person {
             double overtimeHours = hoursWorked - 40;
             System.out.println("Regular pay hours (40) $" + hourlyPayRate * 40);
             System.out.println("Overtime pay hours (" + overtimeHours + ") $" + (hourlyPayRate * overtimeHours)*1.5);
-
-            //return ((hourlyPayRate * hoursWorked)*1.5) + carry;
         }
     }
 
@@ -53,7 +51,7 @@ public class Worker extends Person {
         retString += " " +DQ+ "firstName" +DQ+ ":" +DQ+ super.getFirstName() +DQ+ ",";
         retString += " " +DQ+ "lastName" +DQ+ ":" +DQ+ super.getLastName() +DQ+ ",";
         retString += " " +DQ+ "title" +DQ+ ":" +DQ+ super.getTitle() +DQ+ ",";
-        retString += " " +DQ+ "YOB" +DQ+ ":" + super.getYOB() +DQ+ ",";
+        retString += " " +DQ+ "YOB" +DQ+ ":" + super.getYOB() + ",";
         retString += " " +DQ+ "hourlyPayRate" +DQ+ ":" + hourlyPayRate +"}";
         return retString;
     }
@@ -80,7 +78,7 @@ public class Worker extends Person {
                 ", firstName='" + super.getFirstName() + '\'' +
                 ", lastName='" + super.getLastName() + '\'' +
                 ", title='" + super.getTitle() + '\'' +
-                ", YOB=" + super.getYOB() + "\'" +
+                ", YOB=" + super.getYOB() +
                 ", hourlyPayRate=" + hourlyPayRate +
                 '}';
     }
